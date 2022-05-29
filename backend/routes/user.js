@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
-const user = require('../models/user');
 
 const router = express.Router();
 
@@ -23,7 +22,7 @@ router.post('/signup', (req, res, next) => {
         })
         .catch(err => {
           res.status(500).json({
-            error: err
+            message: "Invalid authentication creadentials!"
           });
         });
     });
